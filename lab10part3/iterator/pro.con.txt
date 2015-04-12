@@ -1,0 +1,7 @@
+Pros:
+=====
+The benefits of this pattern are that this pattern is simple to implement and easy to understand. It steps sequentially through data and modifies/updates/etc as each item within the iterator is reached. This pattern is a good approach when all data needs to be checked/modified/updated/etc. because the iterator will begin at some logical start point and continue sequentially up until a logical endpoint.
+
+Cons:
+=====
+The  cons of this approach are that the access time is sequential and is therefore theta(n) for a single depth iteration, with n = # elements in the iteration. If multiple depths are required, then it is the product of the algorithmic complexity of each depth. For example, if we need to iterate over an entire list of integers, and then interate over a second list if the first integer is greater than 5, we have a program essentially running at O(n^2) which is not too good. Additionally, it is difficult to access items out of sequence and relies on additional datum to keep track of indices (or even separate data structures if we are using true iterators).
